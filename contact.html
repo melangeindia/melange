@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ===== Google Analytics (GA4) =====
+     Replace G-XXXXXXXXXX below with your own Measurement ID
+     (Google Analytics ▸ Admin ▸ Data Streams ▸ your web stream).
+     A 'generate_lead' event also fires on successful form submit (see contact.js). -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<!-- ===== End Google Analytics ===== -->
+<title>Contact Us — Melange India</title>
+<meta name="description" content="Get in touch with Melange India for end-to-end hospitality FF&E and OS&E solutions. Based in Bengaluru. Raise an enquiry and our team will respond within 48 working hours.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .lead-hero{position:relative;padding:80px 0 60px;overflow:hidden;text-align:center}
+  .lead-hero::before{content:"";position:absolute;top:-160px;right:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(224,156,58,.18),transparent 62%)}
+  .lead-hero-inner{position:relative;z-index:2;max-width:660px;margin:0 auto}
+  .lead-hero .section-tag{justify-content:center}
+  .lead-hero h1{font-size:clamp(2.3rem,5vw,3.6rem);margin:14px 0}
+  .lead-hero p{color:var(--ink-2);font-size:1.08rem}
+  .lead-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:46px;padding:10px 0 96px;align-items:start}
+  .info-card{background:var(--ink);color:var(--paper);border-radius:6px;padding:42px;position:sticky;top:108px;overflow:hidden}
+  .info-card::after{content:"";position:absolute;bottom:-120px;right:-90px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(210,46,41,.35),transparent 62%)}
+  .info-card>*{position:relative;z-index:2}
+  .info-card h2{color:var(--paper);font-size:1.9rem;margin-bottom:8px}
+  .info-card>p{color:#cfc7ba;margin-bottom:30px;font-size:.95rem}
+  .info-item{display:flex;gap:15px;margin-bottom:24px}
+  .info-item svg{width:21px;height:21px;flex-shrink:0;fill:none;stroke:var(--amber-soft);stroke-width:1.6;margin-top:3px}
+  .info-item h4{color:var(--amber-soft);font-size:.72rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;font-family:var(--sans);font-weight:600}
+  .info-item p,.info-item a{color:#f1ebe0;font-size:.95rem;line-height:1.5}
+  .info-item a:hover{color:var(--amber-soft)}
+  .form-card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:42px}
+  .source-badge{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);background:#fbeae9;border:1px solid #f3cfcd;border-radius:30px;padding:7px 16px;margin-bottom:26px;font-weight:600}
+  .source-badge b{color:var(--red-deep)}
+  .source-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(210,46,41,.18)}
+  .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{margin-bottom:16px}
+  .field.full{grid-column:1/-1}
+  label{display:block;font-size:.73rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:7px;font-weight:600}
+  label .req{color:var(--red)}
+  input,select,textarea{width:100%;background:#fff;border:1px solid var(--line);border-radius:3px;color:var(--ink);padding:12px 14px;font-family:var(--sans);font-size:.95rem;transition:border-color .25s,box-shadow .25s}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(210,46,41,.1)}
+  textarea{resize:vertical;min-height:108px}
+  select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23d22e29'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+  .form-card .btn{width:100%;margin-top:6px}
+  .form-note{font-size:.8rem;color:var(--muted);text-align:center;margin-top:14px}
+  .form-msg{display:none;padding:15px;border-radius:4px;margin-bottom:20px;font-size:.92rem}
+  .form-msg.ok{display:block;background:#e8f5ee;border:1px solid #b6dcc5;color:#1f7a47}
+  .form-msg.err{display:block;background:#fbeae9;border:1px solid #f3cfcd;color:var(--red-deep)}
+  .back-home{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-size:.82rem;margin-bottom:12px}
+  .back-home:hover{color:var(--red)}
+  @media(max-width:920px){.lead-wrap{grid-template-columns:1fr;gap:30px}.info-card{position:static}}
+  @media(max-width:540px){.fgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="topbar-contacts">
+      <a href="tel:+918022975431"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.4 11.4 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.57 1 1 0 0 1-.24 1.02z"/></svg>+91-80-2297 5431/38</a>
+      <a href="mailto:info@melangeindia.in"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 4 8 5 8-5"/></svg>info@melangeindia.in</a>
+      <span class="hours-pill"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mon – Sat: 10:00 – 19:00</span>
+    </div>
+    <div class="topbar-social">
+      <a href="https://www.facebook.com/profile.php?id=61550828443979" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V11H8v3h2.5v7h3v-7H16l.5-3h-3v-1.5c0-.5.5-1 1.5-1z"/></svg></a>
+      <a href="https://www.instagram.com/_melange_india/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="1"/></svg></a>
+      <a href="https://www.linkedin.com/company/melangeindia/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-dark.png" alt="Melange India — Innovating Hospitality" id="brandLogo">
+      <span class="brand-fallback">MELANGE<small>Innovating Hospitality</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#offerings">Offerings</a>
+      <a href="index.html#clients">Clients</a>
+      <a href="contact.html" class="nav-cta">Contact Us</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="lead-hero">
+  <div class="wrap lead-hero-inner">
+    <p class="section-tag">Contact Us</p>
+    <h1>Have a query? <em>Write to us.</em></h1>
+    <p>We'd love to hear from you. Share your enquiry and our team will get back within 48 working hours.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <a href="index.html" class="back-home">← Back to home</a>
+  <div class="lead-wrap">
+    <aside class="info-card">
+      <h2>Let's talk</h2>
+      <p>One window for all your FF&E and OS&E needs — from a single fork to a complete commercial kitchen.</p>
+      <div class="info-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.4 11.4 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.57 1 1 0 0 1-.24 1.02z"/></svg><div><h4>Phone</h4><a href="tel:+918022975431">+91-80-2297 5431/38</a></div></div>
+      <div class="info-item"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 4 8 5 8-5"/></svg><div><h4>Email</h4><a href="mailto:info@melangeindia.in">info@melangeindia.in</a></div></div>
+      <div class="info-item"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><div><h4>Office</h4><p>#51, Rajahariharan Towers, Sajjan Rao Road, VV Puram, Bengaluru, Karnataka — 560 004</p></div></div>
+      <div class="info-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><h4>Hours</h4><p>Mon – Sat · 10 AM – 7 PM<br>Sunday · Holiday</p></div></div>
+    </aside>
+
+    <div class="form-card">
+      <div class="source-badge"><span class="dot"></span>Enquiry source: <b id="sourceLabel">Website</b></div>
+      <div class="form-msg" id="formMsg"></div>
+      <form id="leadForm">
+        <div class="fgrid">
+          <div class="field"><label>Full Name <span class="req">*</span></label><input type="text" name="name" required></div>
+          <div class="field"><label>Company / Hotel</label><input type="text" name="company"></div>
+          <div class="field"><label>Email <span class="req">*</span></label><input type="email" name="email" required></div>
+          <div class="field"><label>Phone <span class="req">*</span></label><input type="tel" name="phone" required></div>
+          <div class="field"><label>City</label><input type="text" name="city"></div>
+          <div class="field"><label>Interested In</label>
+            <select name="interest">
+              <option value="">Select a category…</option>
+              <option>Guest Room Accessories</option>
+              <option>Banquet Furniture</option>
+              <option>Public Accessories</option>
+              <option>Hygiene Amenities</option>
+              <option>Kitchen Essentials</option>
+              <option>Commercial Kitchen Equipment</option>
+              <option>Complete Hotel Setup (Turnkey)</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field full"><label>Your Message</label><textarea name="message" placeholder="Tell us about your requirement…"></textarea></div>
+        </div>
+        <input type="hidden" name="source" id="sourceField" value="website">
+        <input type="hidden" name="page_url" id="pageUrlField">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit" class="btn btn-solid" id="submitBtn">Raise an Enquiry</button>
+        <p class="form-note">We respond within 48 working hours. Your details are kept confidential.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="foot-brand">
+      <img src="assets/logo-dark.png" alt="Melange India" class="foot-logo">
+      <span class="brand-fallback foot-fallback">MELANGE</span>
+      <p>Innovating Hospitality. Premium FF&E and OS&E solutions for luxury hotels, resorts and restaurants. Proudly based in Bengaluru.</p>
+      <div class="foot-social">
+        <a href="https://www.facebook.com/profile.php?id=61550828443979" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V11H8v3h2.5v7h3v-7H16l.5-3h-3v-1.5c0-.5.5-1 1.5-1z"/></svg></a>
+        <a href="https://www.instagram.com/_melange_india/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="1"/></svg></a>
+        <a href="https://www.linkedin.com/company/melangeindia/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-col"><h4>Company</h4><a href="index.html#home">Home</a><a href="index.html#about">About Us</a><a href="index.html#offerings">Offerings</a><a href="index.html#clients">Clients</a><a href="contact.html">Contact</a></div>
+    <div class="foot-col"><h4>Visit Us</h4><p class="foot-addr"><strong>Bengaluru</strong><br>#51, Rajahariharan Towers, Sajjan Rao Road, VV Puram, Karnataka — 560 004</p></div>
+    <div class="foot-col"><h4>Get in Touch</h4><a href="tel:+918022975431">+91-80-2297 5431/38</a><a href="mailto:info@melangeindia.in">info@melangeindia.in</a><p class="foot-addr">Mon – Sat · 10 AM – 7 PM</p></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© <span id="yr"></span> Melange India. All rights reserved.</span><span><em>Innovating Hospitality</em></span></div>
+</footer>
+
+<a href="https://wa.me/919611198284" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp us"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.9 7L4 20l1-4a8 8 0 1 1 15-4z"/><path d="M9 9c0 4 2 6 6 6 0-1 0-1.5-.5-2l-1.5.5c-1-.5-1.5-1-2-2l.5-1.5c-.5-.5-.5-1-2-1z" fill="currentColor" stroke="none"/></svg></a>
+
+<script src="main.js"></script>
+<script src="contact.js"></script>
+</body>
+</html>

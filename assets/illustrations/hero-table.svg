@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 650" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#221c18"/>
+      <stop offset="0.55" stop-color="#3a2a23"/>
+      <stop offset="1" stop-color="#2a1a17"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="32%" cy="22%" r="55%">
+      <stop offset="0" stop-color="#e09c3a" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#e09c3a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="80%" cy="88%" r="55%">
+      <stop offset="0" stop-color="#d22e29" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#d22e29" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="520" height="650" rx="6" fill="url(#bg)"/>
+  <rect width="520" height="650" rx="6" fill="url(#glowA)"/>
+  <rect width="520" height="650" rx="6" fill="url(#glowB)"/>
+
+  <!-- decorative thin frame -->
+  <rect x="22" y="22" width="476" height="606" rx="3" fill="none" stroke="#f3ece0" stroke-opacity="0.18" stroke-width="1.5"/>
+
+  <!-- charger plate -->
+  <g transform="translate(260 300)" stroke-linecap="round">
+    <circle r="150" fill="none" stroke="#e09c3a" stroke-opacity="0.6" stroke-width="2.5"/>
+    <circle r="125" fill="#1c1613" fill-opacity="0.35" stroke="#f3ece0" stroke-opacity="0.55" stroke-width="2"/>
+    <circle r="98"  fill="none" stroke="#f3ece0" stroke-opacity="0.35" stroke-width="1.4"/>
+    <circle r="78"  fill="none" stroke="#d22e29" stroke-opacity="0.7" stroke-width="2"/>
+    <!-- napkin fold suggestion -->
+    <path d="M-30 -40 L0 50 L30 -40 Z" fill="#f3ece0" fill-opacity="0.10" stroke="#f3ece0" stroke-opacity="0.4" stroke-width="1.6"/>
+  </g>
+
+  <!-- fork (left) -->
+  <g transform="translate(70 300)" stroke="#f3ece0" stroke-opacity="0.85" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M0 -120 V-70 M-10 -120 V-78 M10 -120 V-78 M-10 -78 Q0 -64 0 -70 Q0 -64 10 -78"/>
+    <path d="M0 -70 V120"/>
+  </g>
+  <!-- knife (right) -->
+  <g transform="translate(450 300)" stroke="#f3ece0" stroke-opacity="0.85" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M0 -120 q16 30 0 70 V120"/>
+  </g>
+
+  <!-- wine glass top-right -->
+  <g transform="translate(400 120)" stroke="#e09c3a" stroke-opacity="0.8" stroke-width="2.4" fill="none" stroke-linecap="round">
+    <path d="M-16 0 a16 18 0 0 0 32 0 Z" fill="#d22e29" fill-opacity="0.25"/>
+    <path d="M0 18 V52 M-14 54 h28"/>
+  </g>
+
+  <!-- small steam/sparkle accents -->
+  <g stroke="#f3ece0" stroke-opacity="0.5" stroke-width="1.6" stroke-linecap="round">
+    <path d="M150 110 q8 -10 0 -22"/>
+    <path d="M168 120 q8 -10 0 -22"/>
+  </g>
+</svg>
