@@ -3,7 +3,7 @@
    Receives form submissions and appends them as a row in a Google Sheet.
 
    SETUP (5 minutes, completely free):
-   1. Create a Google Sheet. Name the first tab "Leads".
+   1. Create a Google Sheet. Name the first tab "Melange Website Form Data".
    2. In the Sheet menu: Extensions ▸ Apps Script.
    3. Delete any sample code, paste THIS entire file, and Save.
    4. Click "Deploy" ▸ "New deployment".
@@ -19,8 +19,8 @@
    To get email alerts on every lead, set NOTIFY_EMAIL below.
    ========================================================================= */
 
-const SHEET_NAME   = "Leads";
-const NOTIFY_EMAIL = "";   // e.g. "info@melangeindia.in"  (leave "" to disable)
+const SHEET_NAME   = "Melange Data";
+const NOTIFY_EMAIL = "";   // e.g. "abhisharma82957@gmail.com"  (leave "" to disable)
 
 function doPost(e) {
   try {
