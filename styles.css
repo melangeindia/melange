@@ -65,7 +65,9 @@ img{max-width:100%;display:block}
 .hero-figure .frame::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 80% 95%,rgba(210,46,41,.18),transparent 55%)}
 .hero-figure .frame-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero-figure .frame span{position:absolute;z-index:2;bottom:26px;left:26px;right:26px;color:#f3ece0;font-family:var(--serif);font-style:italic;font-size:1.5rem;line-height:1.3;text-shadow:0 2px 12px rgba(0,0,0,.5)}
-.hero-badge{position:absolute;top:-18px;left:-18px;background:var(--card);border:1px solid var(--line);border-radius:50%;width:108px;height:108px;display:grid;place-items:center;text-align:center;font-family:var(--serif);box-shadow:0 12px 30px -12px rgba(28,25,22,.25);transform:rotate(-8deg)}
+.hero-badge.hero-badge{
+  display:none;
+}
 .hero-badge b{display:block;font-size:1.7rem;color:var(--red)}
 .hero-badge small{font-size:.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-family:var(--sans)}
 
@@ -128,9 +130,50 @@ section{padding:96px 0}
 .testi footer{margin-top:22px;font-size:.95rem;color:var(--ink);font-weight:600}
 .testi footer span{display:block;font-size:.78rem;color:var(--muted);letter-spacing:.5px;margin-top:3px;font-weight:400}
 
-.clients .client-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-.client-logos span{border:1px solid var(--line);background:var(--card);border-radius:3px;padding:15px 26px;font-family:var(--serif);font-size:1.02rem;letter-spacing:1.5px;color:var(--ink-2);transition:all .28s}
-.client-logos span:hover{color:var(--red);border-color:var(--amber);transform:translateY(-3px)}
+.client-strip{
+  overflow:hidden;
+  width:100%;
+  padding:20px 0;
+}
+
+.client-track{
+  display:flex;
+  align-items:center;
+  gap:80px;
+  width:max-content;
+  animation:clientScroll 35s linear infinite;
+}
+
+.client-track img{
+  width:140px;
+  height:70px;
+  object-fit:contain;
+  transition:.3s ease;
+}
+
+.client-track img:hover{
+  transform:scale(1.05);
+}
+
+@keyframes clientScroll{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+@media(max-width:768px){
+  .client-track{
+    gap:45px;
+  }
+
+  .client-track img{
+    width:90px;
+    height:50px;
+  }
+}
 
 .cta-band{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
 .cta-band::before{content:"";position:absolute;top:-150px;right:-100px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(210,46,41,.4),transparent 60%)}
